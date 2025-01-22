@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+	
+</head>
+<body>
+<header class="header-container">
+	<div id="banner-modifier" class="hidden">
+		<div class="mode-edition">
+			<i class="fa-solid fa-pen-to-square"></i>
+			<span>Mode édition</span>
+		</div>
+	</div>
+	<div class="header-h1-nav">
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+	<nav>
+		<ul>
+			<li><a href="index.html#portfolio">projets</a></li>
+			<li><a href="index.html#contact">contact</a></li>
+			<li id="auth-buttons">
+			
+			<a id="only-guest" href="loginPage/login.html" >login</a>
+			<a id="nav-logout" href="#" style="display: none;">logout</a>
+		</li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		</ul>
+	</nav>
+	</div>
+</header>
+<main>
+	<section id="introduction">
+		<figure>
+			<img src="./assets/images/sophie-bluel.png" alt="">
+		</figure>
+		<article>
+			<h2>Designer d'espace</h2>
+			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+		</article>
+	</section>
+	<section id="portfolio">
+		<div class="project-header">	
+		<h2>Mes Projets</h2>
+		<a id="edit-button" href="#">
+			<i class="fa-regular fa-pen-to-square"></i>modifier
+		</a>
+	</div>	
+		<div class="filters">
+			<!--Les filtres ici via JavaScript-->
+		</div>
+		
+
+		<div class="gallery"></div>
+	</section>
+	<section id="contact">
+		<h2>Contact</h2>
+		<p>Vous avez un projet ? Discutons-en !</p>
+		<form action="#" method="post">
+			<label for="name">Nom</label>
+			<input type="text" name="name" id="name">
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email">
+			<label for="message">Message</label>
+			<textarea name="message" id="message" cols="30" rows="10"></textarea>
+			<input type="submit" value="Envoyer">
+		</form>
+	</section>
+</main>
+
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+<div id="modal" class="modal-overlay ">
+	<div id="modal-works" class="modal-gallery">
+		<h3 id="title-modal-overlay" class="modal-title">Galerie Photo</h3>
+		<div class="modal-content">
+				
+		</div>
+		<button id="modal-edit-add" class="modal-add">Ajouter une photo</button>
+		<hr class="one-line">
+		<a id="button-to-close-first-windows" href="#" class="modal-close"><i class="fa-solid fa-xmark"></i></a>
+	</div>
+<div id="modal-edit" class="modal-edit-work hide">
+		<div class="container-for-icon-in-second-window-of-modal">
+			<a id="arrow-return" href="#"><i class="fa-solid fa-arrow-left"></i></a>
+			<a id="button" href="#"><i class="fa-solid fa-xmark"></i></a>
+		</div>
+
+		<h3 class="modal-title">Ajout photo</h3>
+		<section id="modal-edit-new-photo" method="post" action="#">
+				<i id="photo-add-icon" class="fa-regular fa-image"></i>
+				<label id="new-image">+Ajouter photo</label>
+				<input id="form-image" type="file" name="image" style="display: none;" accept="image/*, .jpg, .jpeg, .png" required>
+				<p id="photo-size">jpg, png, : 4mo max</p>
+				<div id="photo-preview"></div>
+		</section>
+			<form class="modal-content-new-category-title">
+				<label id="title-form" for="form-title">Titre</label>
+				<input type="text" name="title" id="form-title" value="" required>
+				<label id="title-form" for="form-category">Catégorie</label>
+				<select class="choice-category" id="form-category"></select>
+					<hr class="two-line">
+				<input type="submit" id="submit-new-work" value="valider">
+			</form>
+		
+	</div>
+</div>
+<script defer src="index.js"></script>
+<script defer src="./loginPage/modal.js"></script>
+</body>
+</html>
